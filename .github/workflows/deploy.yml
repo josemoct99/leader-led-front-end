@@ -1,24 +1,34 @@
-name: Deploy to S3
+name: Deploy React App to S3
 
 on:
   push:
     branches:
-      - main
+      - main # Cambia a la rama que quieras monitorear
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+    # Paso 1: Clonar el repositorio
     - name: Checkout code
       uses: actions/checkout@v3
 
+    # Paso 2: Configurar Node.js (para instalar dependencias)
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16 # Usa la versión compatible con create-react-app
+
+    # Paso 3: Instalar dependencias
     - name: Install dependencies
       run: npm install
 
-    - name: Build project
+    # Paso 4: Construir la aplicación
+    - name: Build React app
       run: npm run build
 
+    # Paso 5: Subir a S3
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@v0.5.1
       with:
