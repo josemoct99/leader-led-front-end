@@ -18,7 +18,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 16 # Usa la versión compatible con create-react-app
+        node-version: 22
 
     # Paso 3: Instalar dependencias
     - name: Install dependencies
