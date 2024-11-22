@@ -1,0 +1,77 @@
+{
+    "compilerOptions": {
+      // Habilita la generación de mapas de fuente (source maps) para depuración
+      "sourceMap": true,
+  
+      // Garantiza que todas las variables tengan un tipo explícito
+      "noImplicitAny": true,
+  
+      // Genera archivos de declaración (.d.ts) al compilar
+      "declaration": true,
+  
+      // Configuración del sistema de módulos
+      "module": "esnext",
+  
+      // Especifica el estándar de ECMAScript de salida
+      "target": "es5",
+  
+      // Permite importar archivos .js en el proyecto
+      "allowJs": true,
+  
+      // No omite verificaciones de bibliotecas (reduce problemas en compilación)
+      "skipLibCheck": true,
+  
+      // Habilita JSX y especifica que es para React
+      "jsx": "react", // Actualizado para React 17+
+  
+      // Habilita la resolución de módulos estilo Node.js
+      "moduleResolution": "node",
+  
+      // Permite la importación predeterminada de módulos sin exportaciones predeterminadas
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+  
+      // Permite importar archivos JSON como módulos
+      "resolveJsonModule": true,
+  
+      // Activa estrictas verificaciones de tipos (opcional)
+      "strict": true, // Incluye `noImplicitAny`, `strictNullChecks`, etc.
+  
+      // Restringe el uso de `this` no tipado
+      "noImplicitThis": true,
+  
+      // Verifica los accesos a propiedades en cadenas indexadas
+      "noPropertyAccessFromIndexSignature": true,
+  
+      // Permite `null` y `undefined` en tipos opcionales
+      "strictNullChecks": true,
+  
+      // Habilita el soporte para decoradores (si es necesario)
+      "experimentalDecorators": true,
+  
+      // Configuración de salida
+      "outDir": "./build", // Carpeta de salida para los archivos compilados
+      "rootDir": "./src",  // Carpeta raíz para el código fuente
+  
+      // Otros ajustes
+      "forceConsistentCasingInFileNames": true, // Evita diferencias de mayúsculas y minúsculas
+      "useUnknownInCatchVariables": false, // Opcional: permite `any` en `catch`
+      "noFallthroughCasesInSwitch": true, // Evita errores de casos no controlados en `switch`
+      "isolatedModules": true, // Requerido para herramientas como Babel o Parcel
+      "incremental": true, // Habilita compilaciones incrementales para mayor velocidad
+      "lib": ["dom", "esnext"],
+    },
+    "include": [
+      "src", // Incluye todo el código dentro de la carpeta `src`
+      "src/types/**/*.d.ts", // Asegúrate de incluir definiciones de tipos personalizados
+      "custom.d.ts" 
+    ],
+    "exclude": [
+      "node_modules", // Evita que se analice la carpeta de dependencias
+      "build", // Excluye la carpeta de salida
+      "dist", // Excluye carpeta de distribución si aplica
+      "lib",  // Excluye bibliotecas generadas
+      ".vscode", // Evita incluir configuraciones de VSCode
+      "public" // Evita incluir la carpeta estática pública de React
+    ]
+  }
