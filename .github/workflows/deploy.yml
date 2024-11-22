@@ -28,7 +28,11 @@ jobs:
     - name: Build React app
       run: npm run build
 
-    # Paso 5: Subir a S3
+    # Paso 5: Ejecutar Linter (npm run lint)
+    - name: Run Linter
+      run: npm run lint
+
+    # Paso 6: Subir a S3
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@v0.5.1
       with:
