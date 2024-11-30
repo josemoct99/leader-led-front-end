@@ -1,0 +1,17 @@
+.content {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+  }
+  
+  .content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  

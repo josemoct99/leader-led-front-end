@@ -22,7 +22,7 @@
       "skipLibCheck": true,
   
       // Habilita JSX y especifica que es para React
-      "jsx": "react", // Actualizado para React 17+
+      "jsx": "react-jsx", // Actualizado para React 17+
   
       // Habilita la resolución de módulos estilo Node.js
       "moduleResolution": "node",
