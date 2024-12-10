@@ -11,8 +11,9 @@ const CategoryCard = ({name, image}: Card) => {
 
     return (
         <>
-            <div className="card" style={{backgroundImage: `url(${image})`}}>
-                {name}
+            <div className="card">
+                <img src={image} alt=""/>
+                <p>{name}</p>
             </div>
         </>
     )

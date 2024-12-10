@@ -1,3 +1,34 @@
-.card{
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22em;
+    max-height: 22em;
+    min-height: 22em;
+    width: 20em;
+    cursor: pointer;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.8);
+        transition: filter 0.25s;
+    }
 
+    & p {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 0 3em;
+        font-family: "Proxima Nova Bold", sans-serif;
+        font-size: 1.5em;
+        color: white;
+    }
+}
+
+.card:hover {
+    & img {
+        filter: brightness(1);
+    }
 }
