@@ -1,4 +1,4 @@
-export * from './ContactPage';
+export * from './ContactPage/ContactPage';
 export * from './ProductsPage/ProductsPage';
-export * from './HomePage';
-export * from './ServicesPage';
+export * from './HomePage/HomePage';
+export * from './ServicesPage/ServicesPage';

@@ -8,28 +8,26 @@
     text-align: center;
     padding: 2rem;
     margin-bottom: 2cap;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    background: url('../../assets/images/fondoHero.png') no-repeat center center/cover;
-    background-size: cover; /* Mantén la imagen ajustada al contenedor */
-    filter: blur(5px); /* Aplica el desenfoque al fondo */
-    z-index: 1; /* Coloca el fondo detrás del contenido */
 }
-  
-  .hero-content h1 {
+
+.decoration-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(192, 192, 192, 0.5);
+    padding: 3em 18em;
+}
+
+.hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    -webkit-text-stroke: 1.5px black;
-  }
-  
-  .hero-content p {
+}
+
+.hero-content p {
     color: #000;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 2rem;
-    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
-  }
+}
   

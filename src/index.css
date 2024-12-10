@@ -1,13 +1,17 @@
+@import url(https://db.onlinewebfonts.com/c/1e7e97d0da36ea1b00a66348a43dfb26?family=Proxima+Nova+Thin);
+@import url(https://db.onlinewebfonts.com/c/cef009888ec0e6c3fdbb27db91a57b8f?family=Proxima+Nova+A);
+@import url(https://db.onlinewebfonts.com/c/72b6f2c9990bd3d37b8013a59ed78902?family=Proxima+Nova+Bold);
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Proxima Nova A", "Proxima Nova Bold", "Proxima Nova Thin", 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
