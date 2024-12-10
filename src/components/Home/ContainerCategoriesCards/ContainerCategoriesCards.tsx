@@ -1,4 +1,5 @@
 import CategoryCard from "../CategoryCard/CategoryCard";
+import {Link} from "react-router-dom";
 import './ContainerCategoriesCards.css'
 
 
@@ -7,9 +8,9 @@ export const ContainerCategoriesCards = () => {
     return (
         <>
             <div className="container-cards">
-                <CategoryCard name="Productos" image="./images/home-cards/products.webp"/>
-                <CategoryCard name="Servicios" image="./images/home-cards/service.webp"/>
-                <CategoryCard name="Tienda" image="./images/home-cards/shop.webp"/>
+                <Link to="/products"> <CategoryCard name="Productos" image="./images/home-cards/products.webp"/> </Link>
+                <Link to="/services"><CategoryCard name="Servicios" image="./images/home-cards/service.webp"/></Link>
+                <Link to="/cart"><CategoryCard name="Carrito" image="./images/home-cards/shop.webp"/></Link>
             </div>
         </>
     )

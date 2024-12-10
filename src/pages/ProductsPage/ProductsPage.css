@@ -1,3 +1,11 @@
+.product-page{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4em;
+}
+
 .products-title {
     font-size: 2rem;
     text-align: center;

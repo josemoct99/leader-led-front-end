@@ -1,0 +1,100 @@
+#main_footer {
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Color de texto oscuro para mayor contraste */
+    padding: 3rem 0; /* Más espacio vertical */
+    text-align: center;
+    width: 100%;
+    margin-top: 5em; /* Para separar el footer del contenido */
+    border-top: 1px solid #ddd; /* Línea divisoria sutil al inicio del footer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem; /* Más espacio entre las secciones */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+    padding: 2rem;
+    text-align: left;
+    border-right: 1px solid #ddd; /* Línea divisoria sutil entre las secciones */
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem; /* Títulos más grandes */
+    color: #1F4F77; /* Azul oscuro para los títulos */
+}
+
+.footer-section p {
+    font-size: 1rem;
+    color: #555; /* Gris para el texto */
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: inside square;
+    padding-left: 20px;
+}
+
+.footer-section ul li {
+    margin: 0.75rem 0; /* Más espacio entre los elementos de la lista */
+    font-size: 1rem;
+    color: #333; /* Color oscuro para el texto de la lista */
+}
+
+.footer-section ul li a {
+    color: #61A0AF; /* Azul claro para los enlaces */
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4DA1A9; /* Verde azulado al hacer hover */
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #1F4F77; /* Azul oscuro para las redes sociales */
+    margin: 0;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #4DA1A9; /* Verde azulado para el hover */
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    font-size: 1rem;
+    color: #bbb;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; /* Ajustamos el espaciado para pantallas pequeñas */
+    }
+
+    .footer-section {
+        text-align: center;
+        padding: 1.5rem;
+        border-right: none;
+    }
+}

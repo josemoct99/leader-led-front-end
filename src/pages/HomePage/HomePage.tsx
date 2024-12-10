@@ -1,11 +1,16 @@
-import {Content, Hero,ContainerCategoriesCards} from "../../components";
+import {Content, Hero, ContainerCategoriesCards, Map} from "../../components";
+import './HomePage.css'
 
 export const HomePage = () => {
     return (
         <>
-            <Hero />
-            <ContainerCategoriesCards/>
-            <Content/>
+            <div className="home-page">
+                <Hero/>
+                <ContainerCategoriesCards/>
+                <Content/>
+                <Map/>
+            </div>
+
         </>
     )
 }

@@ -12,7 +12,7 @@ export const Navbar = () => {
                 <li><Link to="/products">Productos</Link></li>
                 <li><Link to="/services">Servicios</Link></li>
                 <li><Link to="/contact">Contáctenos</Link></li>
-                <li><Link to="/contact">Carrito</Link></li>
+                <li><Link to="/cart">Carrito</Link></li>
                 {/* here maybe we should put an icon of shop idk*/}
             </ul>
         </nav>

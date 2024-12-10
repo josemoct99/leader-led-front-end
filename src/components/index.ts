@@ -1,8 +1,10 @@
-export * from './Content/Content';
+export * from './Home/Content/Content';
 export * from './Hero/Hero';
 export * from './Navbar/Navbar';
 export * from './Product/ProductGrid'
 export * from './Product/ProductItem'
 export * from './Home/CategoryCard/CategoryCard'
 export * from './Home/ContainerCategoriesCards/ContainerCategoriesCards'
-
+export * from './Footer/Footer'
+export * from './Map/Map'
+export * from './TitleDecorate/TitleDecorate'
