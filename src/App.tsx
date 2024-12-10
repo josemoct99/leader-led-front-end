@@ -1,17 +1,15 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ServicesPage, ContactPage, ProductsPage } from './pages';
-import { Navbar, Hero, Content } from './components';
+import { ServicesPage, ContactPage, ProductsPage,HomePage } from './pages';
+import { Navbar } from './components';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Navbar />
-        <Hero />
-      
         <Routes>
-          <Route path='/' element={<Content />}>
+          <Route path='/' element={<HomePage />}>
           </Route>
 
           <Route path='/contact' element={<ContactPage />}>

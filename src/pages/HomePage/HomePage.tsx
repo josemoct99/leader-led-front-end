@@ -1,7 +1,11 @@
+import {Content, Hero} from "../../components";
+
 export const HomePage = () => {
     return (
         <>
-            Página principal
+            <Hero />
+            
+            <Content/>
         </>
     )
 }
