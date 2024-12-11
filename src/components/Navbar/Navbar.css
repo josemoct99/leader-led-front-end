@@ -4,11 +4,13 @@
     justify-content: space-between;
     height: 6rem;
     align-items: center;
-    background-color: #1f4f77;
-    color: #fff;
+    background-color: #ffffff;
+    color: #525252;
     padding: 0 5rem;
     text-align: center;
     align-content: center;
+    box-shadow: 0 0 10px -5px #000000;
+    z-index: 1;
 }
 
 .navbar-logo {
@@ -31,10 +33,10 @@
 .navbar-links li a {
     position: relative;
     display: block;
-    color: #fff;
+    color: #000000;
     padding: 0.5rem 0;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 .navbar-links li a::after {
     position: relative;
@@ -42,7 +44,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background-color: #fff;
+    background-color: #000000;
     transition: width 0.25s ease-in-out;
     transform-origin: left;
 }

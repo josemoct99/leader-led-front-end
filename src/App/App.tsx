@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {ServicesPage, ContactPage, ProductsPage, HomePage, CartPage} from './pages';
-import {Navbar, Footer} from './components';
+import {ServicesPage, ContactPage, ProductsPage, HomePage, CartPage} from '../pages';
+import {Navbar, Footer} from '../components';
 
 const App = () => {
     return (
