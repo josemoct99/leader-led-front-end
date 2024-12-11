@@ -1,4 +1,5 @@
 import {TitleDecorate} from '../../components';
+import {BrandChooser} from "../../components/Products";
 import './ProductsPage.css';
 
 export const ProductsPage = () => {
@@ -6,7 +7,7 @@ export const ProductsPage = () => {
         <>
             <div className="product-page">
                 <TitleDecorate title="Productos" subTitle="Iluminaria"/>
-
+                <BrandChooser/>
             </div>
 
         </>
