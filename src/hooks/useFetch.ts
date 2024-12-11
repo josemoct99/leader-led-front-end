@@ -24,16 +24,17 @@ export const useFetch = <T>(url: string): Params<T> => {
                 if (!response.ok) {
                     throw new Error(`Could not fetch data. ${url}`);
                 }
-                const jsonData = await response.json();
-                setData(jsonData);
-                setError(null);
+                return await response.json();
             } catch (e) {
                 setError(e);
             } finally {
                 setLoading(false);
             }
         }
-        fetchData();
+        fetchData().then(data => {
+            setData(data);
+            setError(null);
+        });
 
         return () => {
             controller.abort();

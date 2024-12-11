@@ -1,6 +1,6 @@
 import './BrandChooser.css'
 import {useFetch} from "../../../hooks";
-import {Brand as BrandType}  from "../../../types";
+import {Brand as BrandType} from "../../../types";
 import {Brand} from "../index";
 
 const url = "http://localhost:8080/api/brand/";
@@ -18,7 +18,7 @@ export const BrandChooser = () => {
         <>
             <div>
                 {data?.map((item) => (
-                    <Brand key={item.name} name={item.name} image={item.image} />
+                    <Brand key={item.name} name={item.name} images={item.images} idBrand={item.idBrand}/>
                 ))}
 
             </div>
