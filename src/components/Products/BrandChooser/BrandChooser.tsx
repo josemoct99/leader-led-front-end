@@ -16,12 +16,14 @@ export const BrandChooser = () => {
     }
     return (
         <>
-            <div>
-                {data?.map((item) => (
-                    <Brand key={item.name} name={item.name} images={item.images} idBrand={item.idBrand}/>
-                ))}
-
+            <div className="containerBrandChooser">
+                <div className="brandChooser">
+                    {data?.map((item) => (
+                        <Brand key={item.name} name={item.name} images={item.images} idBrand={item.idBrand}/>
+                    ))}
+                </div>
             </div>
+
         </>
     )
 }

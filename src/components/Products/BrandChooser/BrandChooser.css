@@ -1,0 +1,10 @@
+.containerBrandChooser{
+    overflow: hidden;
+    width: 60em;
+}
+
+.brandChooser {
+    position: relative;
+    display: flex;
+    width: 110em;
+}

@@ -4,10 +4,16 @@ import {Brand as BrandType} from '../../../types/brand'
 
 export const Brand = ({name, images}: BrandType) => {
 
-    const principalImg = "images/brands/" +images[0].url +"."+ images[0].typeSet[0]?.type // this will be arranged in another moment jiji
+    let stringImage :string[] = []
+    images.forEach(image => {
+        image.typeSet.forEach(type => {
+            stringImage.push(image.url+"."+type?.type);
+        })
+    })
 
-    console.log(principalImg)
+    console.log(stringImage[0])
 
+    const principalImg = "images/brands/" + stringImage[0] // principal image
     return (
         <>
             <button className="brand" title={name}>
