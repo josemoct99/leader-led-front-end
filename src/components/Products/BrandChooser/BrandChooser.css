@@ -7,4 +7,5 @@
     position: relative;
     display: flex;
     width: 110em;
+    gap: 1em;
 }

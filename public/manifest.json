@@ -8,6 +8,11 @@
       "type": "image/x-icon"
     },
     {
+      "src": "./logos/leaderled-logo-colorized.svg",
+      "type": "image/svg+xml",
+      "size": "any"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
