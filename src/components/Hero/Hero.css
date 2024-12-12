@@ -9,6 +9,7 @@
     padding: 2rem;
     margin-bottom: 2cap;
     width: 100%;
+    overflow: hidden;
 }
 
 .decoration-hero-content {
@@ -17,7 +18,7 @@
     align-content: center;
     justify-content: center;
     background-color: rgba(192, 192, 192, 0.5);
-    padding: 3em 18em;
+    padding: 3em 5em;
 }
 
 .hero-content h1 {
@@ -30,5 +31,11 @@
     color: #000;
     font-weight: 700;
     font-size: 2rem;
+}
+
+@media (width <= 800px) {
+    .hero-content p {
+        display: none;
+    }
 }
   

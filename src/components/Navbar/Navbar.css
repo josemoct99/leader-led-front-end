@@ -12,6 +12,14 @@
     box-shadow: 0 0 10px -5px #000000;
     z-index: 1;
 }
+.principal-image{
+    width: 200px;
+    height: auto;
+}
+.secondary-image{
+    width: 0;
+    height: 0;
+}
 
 .navbar-logo {
     font-weight: bold;
@@ -51,4 +59,42 @@
 .navbar-links li a:hover::after {
     width: 100%;
 }
-  
+
+.btn-close-sidebar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+
+@media screen and (width <= 1200px) {
+    .navbar-logo{
+        padding: 0 0rem;
+    }
+    .principal-image{
+        width: 0;
+        height: 0;
+    }
+    .secondary-image{
+        width: 120px;
+        height: auto;
+    }
+}
+
+
+@media screen and (width <= 1000px) {
+    .side-responsive {
+        display: none;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        position: fixed;
+        top: -50px;
+    }
+}
