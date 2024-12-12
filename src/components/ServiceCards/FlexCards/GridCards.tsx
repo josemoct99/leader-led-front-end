@@ -1,10 +1,10 @@
 import './FlexCards.css'
 import {ServiceCard} from "../Card/ServiceCard";
 
-export const FlexCards = () => {
+export const GridCards = () => {
 
     return (
-        <div className="FlexCards">
+        <div className="gridcards">
             <ServiceCard title="Mantenimiento Eléctrico"
                          description="Todo lo relacionado a lo que se refiere el mantenimiento eléctrico como instalaciones, contrataciones y cotizaciones del ámbito."/>
             <ServiceCard title="Programación drivers"

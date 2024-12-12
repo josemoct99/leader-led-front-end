@@ -31,7 +31,16 @@ export const Navbar = () => {
                     <MenuButton parentMethod={sideBarOC}/>
                 </li>
             </ul>
-            <SideBar open={isOpen}> <button className="btn-close-sidebar" onClick={sideBarOC}> X </button></SideBar>
+            <SideBar open={isOpen}>
+                <button className="btn-close-sidebar" onClick={sideBarOC}> X</button>
+                <ul className="navbar-links-sidebar">
+                    <li><Link to="/" onClick={sideBarOC}>Inicio</Link></li>
+                    <li><Link to="/products" onClick={sideBarOC}>Productos</Link></li>
+                    <li><Link to="/services" onClick={sideBarOC}>Servicios</Link></li>
+                    <li><Link to="/contact" onClick={sideBarOC}>Contáctenos</Link></li>
+                    <li><Link to="/cart" onClick={sideBarOC}>Carrito</Link></li>
+                </ul>
+            </SideBar>
         </nav>
     );
 };
