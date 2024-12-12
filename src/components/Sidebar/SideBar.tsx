@@ -1,5 +1,4 @@
 import './Sidebar.css'
-import {Link} from "react-router-dom";
 import {ReactNode} from "react";
 
 interface Props {
