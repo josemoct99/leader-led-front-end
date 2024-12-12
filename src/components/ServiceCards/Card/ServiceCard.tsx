@@ -1,4 +1,5 @@
 import './ServiceCard.css'
+import {ConsultButton} from "../../utils/ConsultButton/ConsultButton";
 
 interface Props {
     title: string,
@@ -7,6 +8,7 @@ interface Props {
 
 export const ServiceCard = ({title, description}: Props) => {
 
+    const message = `Un agradable día, quisiera tener información sobre el servicio de ${title}.`;
 
     return (
         <>
@@ -15,7 +17,7 @@ export const ServiceCard = ({title, description}: Props) => {
                 <div className="title-service-body">
                     <p>{description}</p>
                 </div>
-                <button> Consultar</button>
+                <ConsultButton message={message}/>
             </div>
         </>
     )

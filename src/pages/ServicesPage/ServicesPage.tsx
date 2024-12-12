@@ -1,4 +1,4 @@
-import {TitleDecorate, FlexCards} from "../../components";
+import {TitleDecorate, GridCards} from "../../components";
 import './ServicesPage.css'
 
 export const ServicesPage = () => {
@@ -6,7 +6,7 @@ export const ServicesPage = () => {
         <>
             <div className="services-page">
                 <TitleDecorate title={"Tipos de"} subTitle={"Servicios"}/>
-                <FlexCards/>
+                <GridCards/>
             </div>
         </>
     )
