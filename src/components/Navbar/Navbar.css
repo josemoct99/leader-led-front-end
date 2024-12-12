@@ -75,7 +75,7 @@
 
 @media screen and (width <= 1200px) {
     .navbar-logo{
-        padding: 0 0rem;
+        padding: 0 0;
     }
     .principal-image{
         width: 0;
