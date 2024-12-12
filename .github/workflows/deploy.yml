@@ -1,7 +1,7 @@
 name: Deploy React App to S3
 
 on:
-  push:
+  pull_request:
     branches:
       - main # Cambia a la rama que quieras monitorear
 
