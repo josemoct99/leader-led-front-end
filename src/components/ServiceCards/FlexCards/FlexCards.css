@@ -1,0 +1,10 @@
+.FlexCards {
+    position: relative;
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5em;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}

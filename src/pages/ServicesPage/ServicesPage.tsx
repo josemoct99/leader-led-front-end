@@ -1,7 +1,13 @@
+import {TitleDecorate, FlexCards} from "../../components";
+import './ServicesPage.css'
+
 export const ServicesPage = () => {
     return (
         <>
-            <h1>Página de servicios</h1>
+            <div className="services-page">
+                <TitleDecorate title={"Tipos de"} subTitle={"Servicios"}/>
+                <FlexCards/>
+            </div>
         </>
     )
 }
