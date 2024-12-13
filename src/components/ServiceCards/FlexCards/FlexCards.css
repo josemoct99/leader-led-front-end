@@ -1,0 +1,19 @@
+.gridcards {
+    position: relative;
+    display: grid;
+    width: 80%;
+    margin: auto;
+    padding: 0 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+@media (max-width: 800px) {
+    .gridcards {
+        width: 100%;
+        margin: auto;
+    }
+}

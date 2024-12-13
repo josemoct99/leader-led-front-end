@@ -1,0 +1,7 @@
+.Map   {
+    position: relative;
+    display: flex;
+    width: 70%;
+    height: 30em;
+    background-color: lightgray;
+}

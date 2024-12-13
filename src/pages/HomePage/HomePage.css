@@ -1,0 +1,10 @@
+.home-page{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: "Proxima Nova A", sans-serif;
+}

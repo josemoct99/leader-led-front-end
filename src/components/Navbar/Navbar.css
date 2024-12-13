@@ -1,27 +1,100 @@
 .navbar {
+    font-family: "Proxima Nova Thin", sans-serif;
     display: flex;
     justify-content: space-between;
+    height: 6rem;
     align-items: center;
-    background-color: #000;
-    color: #fff;
-    padding: 1rem 2rem;
+    background-color: #ffffff;
+    color: #525252;
+    padding: 0 5rem;
     text-align: center;
-  }
-  
-  .navbar-logo {
+    align-content: center;
+    box-shadow: 0 0 10px -5px #000000;
+    z-index: 1;
+}
+.principal-image{
+    width: 200px;
+    height: auto;
+}
+.secondary-image{
+    width: 0;
+    height: 0;
+}
+
+.navbar-logo {
     font-weight: bold;
     font-size: 1.5rem;
-  }
-  
-  .navbar-links {
+    padding-left: 2em;
+}
+
+.navbar-links {
     display: flex;
-    gap: 1rem;
+    gap: 5rem;
     list-style: none;
-  }
-  
-  .navbar-links li a {
-    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3em 0 0;
+    margin: 0;
+
+}
+
+.navbar-links li a {
+    position: relative;
+    display: block;
+    color: #000000;
+    padding: 0.5rem 0;
     text-decoration: none;
-    font-size: 1rem;
-  }
-  
+    font-size: 1.1rem;
+}
+.navbar-links li a::after {
+    position: relative;
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #000000;
+    transition: width 0.25s ease-in-out;
+    transform-origin: left;
+}
+.navbar-links li a:hover::after {
+    width: 100%;
+}
+
+.btn-close-sidebar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+
+@media screen and (width <= 1200px) {
+    .navbar-logo{
+        padding: 0 0;
+    }
+    .principal-image{
+        width: 0;
+        height: 0;
+    }
+    .secondary-image{
+        width: 120px;
+        height: auto;
+    }
+}
+
+
+@media screen and (width <= 1000px) {
+    .side-responsive {
+        display: none;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        position: fixed;
+        top: -50px;
+    }
+}

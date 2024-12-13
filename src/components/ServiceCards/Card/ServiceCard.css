@@ -1,0 +1,41 @@
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(145deg, #ffffff, #d9e4e8);
+    box-shadow: 8px 8px 16px #c2cfd4, -8px -8px 16px #ffffff;
+    border-radius: 15px;
+    padding: 1.5em;
+    width: 20em;
+    height: 23em;
+    font-family: "Proxima Nova Bold", sans-serif;
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover en la tarjeta */
+.service-card:hover {
+    /*transform: translateY(-10px);*/
+    box-shadow: 12px 12px 24px #b3c2c7, -12px -12px 24px #ffffff;
+}
+
+.title-service-card {
+    font-size: 1.8em;
+    color: #1F4F77;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Descripción */
+.service-body p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    margin: 0 0 1.5em 0;
+    padding: 0 1em;
+}

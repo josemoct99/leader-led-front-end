@@ -1,11 +1,15 @@
-import { ProductGrid } from '../../components';
+import {TitleDecorate} from '../../components';
+import {BrandChooser} from "../../components/Products";
 import './ProductsPage.css';
 
 export const ProductsPage = () => {
     return (
         <>
-            <h1 className='products-title'>Nuestros productos:</h1>
-            <ProductGrid />
+            <div className="product-page">
+                <TitleDecorate title="Productos" subTitle="Iluminaria"/>
+                <BrandChooser/>
+            </div>
+
         </>
     )
 }

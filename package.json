@@ -6,15 +6,22 @@
     "node": ">=22.11.0 <23"
   },
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@mediapipe/tasks-vision": "^0.10.19",
+    "@react-three/drei": "^9.120.4",
+    "@react-three/fiber": "^8.17.10",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.1",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "^5.0.1",
+    "three": "^0.171.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -44,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
@@ -51,6 +59,8 @@
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
-    "typescript-eslint": "^8.15.0"
+    "prop-types": "^15.8.1",
+    "typescript-eslint": "^8.15.0",
+    "webpack": "^5.97.1"
   }
 }

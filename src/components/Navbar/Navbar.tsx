@@ -1,16 +1,46 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import {MenuButton} from "../utils";
+import {useState} from "react";
+import {SideBar} from "../Sidebar/SideBar";
 
 export const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <div className="navbar-logo">Leader Led S.A.S.</div>
-      <ul className="navbar-links">
-        <li><Link to="/">Información</Link></li>
-        <li><Link to="/services">Servicios</Link></li>
-        <li><Link to="/products">Productos</Link></li>
-        <li><Link to="/contact">Contáctenos</Link></li>
-      </ul>
-    </nav>
-  );
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const sideBarOC = () => {
+        setIsOpen(!isOpen);
+    }
+
+    return (
+        <nav className="navbar">
+            <div className="navbar-logo">
+                <img src="/images/logos/leaderled.svg" alt="Leader Led Logo"
+                     className="principal-image"/>
+                <img src="/images/logos/leaderled-logo-colorized.svg" alt="Leader Led Logo"
+                     className="secondary-image"/>
+
+            </div>
+            <ul className="navbar-links">
+                <li className="side-responsive"><Link to="/">Inicio</Link></li>
+                <li className="side-responsive"><Link to="/products">Productos</Link></li>
+                <li className="side-responsive"><Link to="/services">Servicios</Link></li>
+                <li className="side-responsive"><Link to="/contact">Contáctenos</Link></li>
+                <li className="side-responsive"><Link to="/cart">Carrito</Link></li>
+                <li>
+                    <MenuButton parentMethod={sideBarOC}/>
+                </li>
+            </ul>
+            <SideBar open={isOpen}>
+                <button className="btn-close-sidebar" onClick={sideBarOC}> X</button>
+                <ul className="navbar-links-sidebar">
+                    <li><Link to="/" onClick={sideBarOC}>Inicio</Link></li>
+                    <li><Link to="/products" onClick={sideBarOC}>Productos</Link></li>
+                    <li><Link to="/services" onClick={sideBarOC}>Servicios</Link></li>
+                    <li><Link to="/contact" onClick={sideBarOC}>Contáctenos</Link></li>
+                    <li><Link to="/cart" onClick={sideBarOC}>Carrito</Link></li>
+                </ul>
+            </SideBar>
+        </nav>
+    );
 };
