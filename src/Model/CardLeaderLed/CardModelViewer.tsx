@@ -14,20 +14,26 @@ const Card = () => {
 
 export const CardModelViewer = () => {
 
+
     return (
-        <Canvas className="canvas-model-viewer" style={{width: "40em", height: "30em"}}>
-            <ambientLight/>
-            {/* eslint-disable-next-line react/no-unknown-property */}
-            <pointLight position={[10, 10, 10]}></pointLight>
-            <Card/>
-            <OrbitControls
-                autoRotate autoRotateSpeed={1.5}
-                enableZoom={true}
-                maxPolarAngle={Math.PI / 2}
-                minPolarAngle={Math.PI / 4}
-                maxDistance={15}
-                minDistance={5}
-            />
-        </Canvas>
+        <div className="canvas-container">
+            <Canvas
+                className="canvas-model-viewer"
+                camera={{position: [0, 0, 7.5]}}
+            >
+                <ambientLight/>
+                {/* eslint-disable-next-line react/no-unknown-property */}
+                <pointLight position={[10, 10, 10]}></pointLight>
+                <Card/>
+                <OrbitControls
+                    autoRotate autoRotateSpeed={1.5}
+                    enableZoom={true}
+                    maxPolarAngle={Math.PI / 2}
+                    minPolarAngle={Math.PI / 4}
+                    maxDistance={15}
+                    minDistance={5}
+                />
+            </Canvas>
+        </div>
     )
 }

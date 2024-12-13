@@ -1,6 +1,18 @@
-.canvas-model-viewer{
+
+.canvas-container {
+    width: 40em;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
     margin: 1em;
     background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: rgba(65, 65, 65, 0.5) 5px 5px 15px;
+    box-shadow: rgba(169, 169, 169, 0.5) 5px 5px 25px;
+    cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0id2hpdGUiLz48L3N2Zz4='),
+    auto;
+
+}
+
+@media (width <= 800px) {
+    .canvas-container {
+        width: 92%;
+    }
 }

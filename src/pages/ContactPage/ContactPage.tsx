@@ -1,12 +1,15 @@
-import {CardModelViewer} from "../../Model/CardLeaderLed/CardModelViewer";
-import {TitleDecorate} from "../../components";
+import {CardModelViewer} from "../../Model";
+import {ContactCard, TitleDecorate} from "../../components";
+import './ContactPage.css'
 
 export const ContactPage = () => {
     return (
-        <>
+        <div className="contact-page">
             <TitleDecorate title={"Pagina de"} subTitle={"Contacto"}/>
-            <CardModelViewer/>
-            xd
-        </>
+            <div className="contact-body">
+                <ContactCard/>
+                <CardModelViewer/>
+            </div>
+        </div>
     )
 }
