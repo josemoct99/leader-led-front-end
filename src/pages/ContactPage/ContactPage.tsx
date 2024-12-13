@@ -1,7 +1,12 @@
+import {CardModelViewer} from "../../Model/CardLeaderLed/CardModelViewer";
+import {TitleDecorate} from "../../components";
+
 export const ContactPage = () => {
     return (
         <>
-            <h1>Página de contacto</h1>
+            <TitleDecorate title={"Pagina de"} subTitle={"Contacto"}/>
+            <CardModelViewer/>
+            xd
         </>
     )
 }
