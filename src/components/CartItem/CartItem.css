@@ -1,0 +1,23 @@
+.CartItem{
+    position: relative;
+    display: grid;
+    background-color: #61A0AF;
+    width: 100%;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+    justify-items: center;
+    height: 6em;
+}
+.head-cart-item{
+    height: 100%;
+    min-width: 50px;
+    background-color: #333333;
+    aspect-ratio: 1/1;
+    display: flex;
+    object-fit: cover;
+}
+.cart-item-details{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}

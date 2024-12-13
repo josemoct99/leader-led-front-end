@@ -1,0 +1,26 @@
+.QuantityComponent {
+    display: flex;
+    position: relative;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proxima Nova Bold", sans-serif;
+
+}
+
+.change-button {
+    display: flex;
+    background-color: #982c2c;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "Proxima Nova Bold", sans-serif;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 0.8em;
+    border: none;
+    font-size: 1.5em;
+}
+.change-button:hover {
+    background-color: #be4b4b;
+}

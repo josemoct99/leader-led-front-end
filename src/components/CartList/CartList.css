@@ -1,0 +1,10 @@
+.CartList{
+    display: flex;
+    flex-direction: column;
+    background-color: #d9d9d9;
+    padding: 10px;
+    width:90%;
+    gap: 1rem;
+    max-height: 35em;
+    overflow-y: scroll;
+}

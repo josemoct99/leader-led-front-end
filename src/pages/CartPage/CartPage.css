@@ -1,0 +1,14 @@
+.body-shopping {
+    position: relative;
+    display: flex;
+    padding: 4em;
+    gap: 3em;
+}
+
+@media (width<= 1300px) {
+    .body-shopping {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

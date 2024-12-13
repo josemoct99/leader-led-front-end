@@ -13,7 +13,7 @@
       "module": "esnext",
   
       // Especifica el estándar de ECMAScript de salida
-      "target": "es5",
+      "target": "es6", // cambie de 5 a 6 para que me deje usar identificador privado #
   
       // Permite importar archivos .js en el proyecto
       "allowJs": true,
