@@ -3,7 +3,7 @@ import {OrbitControls,useGLTF} from "@react-three/drei";
 
 const Card = () => {
     const {scene} = useGLTF("./model/cardLeaderLed.glb")
-    {/* eslint-disable-next-line react/no-unknown-property */}
+    /* eslint-disable-next-line react/no-unknown-property */
     return <primitive object={scene}></primitive>
 }
 
