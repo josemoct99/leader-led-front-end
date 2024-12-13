@@ -1,5 +1,6 @@
 import React from "react";
 import "./ContactCard.css";
+import {ConsultButton} from "../ConsultButton/ConsultButton";
 
 export const ContactCard = () => {
     return (
@@ -16,7 +17,7 @@ export const ContactCard = () => {
                 <p><strong>Página web:</strong> <a href="https://leaderled.com.co/" target="_blank" rel="noopener noreferrer">leaderled.com.co</a></p>
             </div>
             <div className="card-contact-footer">
-                <button className="contact-button">Contáctanos</button>
+                <ConsultButton message={"Buen día, quisiera saber mas sobre el negocio"}/>
             </div>
         </div>
     );
