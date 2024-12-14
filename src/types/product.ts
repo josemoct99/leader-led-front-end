@@ -1,12 +1,15 @@
-import {Brand, Images} from "./index";
-import {Category} from "./category";
+import {Brand, Images,Technology,ColorProps,Application,Category} from "./index";
 
 export interface Product {
     idInventory: number;
-    idBrand: Brand | null;
+    idBrand: Brand ;
     marketName: string;
     desc: string;
-    images: Images[] | null
+    images: Images[]
     quantity: number;
-    category: Category |null;
+    category: Category[];
+    technology: Technology[];
+    Color: ColorProps[];
+    application: Application[];
+
 }

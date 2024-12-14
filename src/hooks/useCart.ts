@@ -40,7 +40,13 @@ export const useCart = () => {
     };
     //more of them things
     const totalProducts = products.length;
-    const categories = Array.from(new Set(products.map(product => product.category?.name)));
+    const categories = Array.from(
+        new Set(
+            products.flatMap(product =>
+                product.category?.map(cat => cat.name) || []
+            )
+        )
+    );
     const totalCategories = categories.length;
 
     useEffect(() => {
