@@ -5,11 +5,11 @@ export interface Product {
     idBrand: Brand ;
     marketName: string;
     desc: string;
-    images: Images[]
+    imageList: Images[]
     quantity: number;
-    category: Category[];
-    technology: Technology[];
-    Color: ColorProps[];
-    application: Application[];
+    categorySetInventory: Category[];
+    technologySetInventory: Technology[];
+    colorsSetInventory: ColorProps[];
+    applicationTypeSetInventory: Application[];
 
 }

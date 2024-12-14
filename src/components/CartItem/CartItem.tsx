@@ -11,8 +11,8 @@ interface Props {
 
 export const CartItem = ({product}: Props) => {
     const img: string =
-        product.images?.[0]?.url && product.images?.[0]?.typeSet?.[0]?.type
-            ? product.images[0].url + product.images[0].typeSet[0].type
+        product.imageList?.[0]?.url && product.imageList?.[0]?.typeSet?.[0]?.type
+            ? product.imageList[0].url + product.imageList[0].typeSet[0].type
             : '.'; // didn't like it
 
     const name: string = product.marketName;

@@ -43,7 +43,7 @@ export const useCart = () => {
     const categories = Array.from(
         new Set(
             products.flatMap(product =>
-                product.category?.map(cat => cat.name) || []
+                product.categorySetInventory?.map(cat => cat.name) || []
             )
         )
     );

@@ -1,17 +1,18 @@
 import "./ProductCard.css"
 import {Product} from "../../../types";
 
+interface Props {
+    product: Product;
+}
 
-export const ProductCard = (product:Product) => {
+
+export const ProductCard = ({product}:Props) => {
     return (
-
         <>
-            return (
-            <article id="cardTotal-article">
                 <section className="cardProduct">
                     <section id="imageProductContainer">
                         <img
-                            src={`/images/products/${product.images[0]?.url}.webp`}
+                            src={`/images/products/${product.imageList[0]?.url}.webp`}
                             alt="Imagen del producto"
                         />
                     </section>
@@ -22,21 +23,18 @@ export const ProductCard = (product:Product) => {
                         </div>
                     </section>
                     <section id="utilsContainer">
-                        <div id="techTypeProduct">
-                            {product.technology[0]?.name}
+                        <div className="desc-properties" id="techTypeProduct">
+                            {product.technologySetInventory[0]?.name}
                         </div>
-                        <div id="appTypeProduct">
-                            {product.application[0]?.name}
+                        <div className="desc-properties" id="appTypeProduct">
+                            {product.applicationTypeSetInventory[0]?.name}
                         </div>
-                        <div id="catTypeProduct">
-                            {product.category[0]?.name}
+                        <div className="desc-properties" id="catTypeProduct">
+                            {product.categorySetInventory[0]?.name}
                         </div>
                     </section>
                 </section>
-            </article>
-            );
-
         </>
-    )
+    );
 }
 
