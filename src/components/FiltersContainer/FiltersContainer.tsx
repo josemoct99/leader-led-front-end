@@ -22,10 +22,10 @@ export const FiltersContainer = ({parentMethod, urlSearch}: Params) => {
     const {data: dataApp,} = useFetch<Application[]>(`${url + filtersType[2]}/`);
 
     const { selectedTechnologies, selectedCategories, selectedApplications, handleFilterChange } = useFilters();
+    const newUrl = constructFilterURL(urlSearch, selectedTechnologies, selectedCategories, selectedApplications);
 
 
     useEffect(() => {
-        const newUrl = constructFilterURL(urlSearch, selectedTechnologies, selectedCategories, selectedApplications);
         parentMethod(newUrl);
     }, [selectedCategories, selectedTechnologies, selectedApplications]);
 
