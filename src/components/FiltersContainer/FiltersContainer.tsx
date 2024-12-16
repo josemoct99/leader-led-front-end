@@ -27,7 +27,7 @@ export const FiltersContainer = ({parentMethod, urlSearch}: Params) => {
 
     useEffect(() => {
         parentMethod(newUrl);
-    }, [selectedCategories, selectedTechnologies, selectedApplications]);
+    }, [selectedCategories, selectedTechnologies, selectedApplications,parentMethod,urlSearch]);
 
 
     return (
