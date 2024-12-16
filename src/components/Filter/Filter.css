@@ -1,0 +1,69 @@
+/* Contenedor Principal */
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-width: 300px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+
+.filter-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 15em;
+    overflow-y: scroll;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    padding: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-item:hover {
+    background-color: #f0f0f0;
+}
+
+.filter-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff; /* Estilo para navegadores compatibles */
+    cursor: pointer;
+}
+
+.filter-label {
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .filter {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .filter-title {
+        font-size: 1.1rem;
+    }
+}

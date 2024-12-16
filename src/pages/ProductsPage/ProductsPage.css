@@ -11,4 +11,13 @@
     font-size: 2rem;
     text-align: center;
   }
+.product-body{
+    position: relative;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 20% 80%;
+    padding: 0 3em;
+
+}
+
   
