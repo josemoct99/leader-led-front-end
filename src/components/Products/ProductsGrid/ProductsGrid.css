@@ -5,7 +5,8 @@
     width: 80em;
     max-width: 100dvw;
     background-color: rgba(14, 74, 92, 0);
-    height: 80em;
+    height: auto;
+    max-height: 80em;
     overflow: scroll;
     justify-content: center;
     align-items: center;

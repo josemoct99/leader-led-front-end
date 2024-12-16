@@ -1,6 +1,6 @@
 import './FiltersContainer.css'
 import {Filter} from "../index";
-import {useFetch, useFilters} from "../../hooks";
+import {useFetch,useFilters} from "../../hooks";
 import {Application, Category, Technology} from "../../types";
 import {FilterItems} from "../FilterItems/FilterItems";
 import {useEffect} from "react";
@@ -21,13 +21,19 @@ export const FiltersContainer = ({parentMethod, urlSearch}: Params) => {
     const {data: dataTech,} = useFetch<Technology[]>(`${url + filtersType[1]}/`);
     const {data: dataApp,} = useFetch<Application[]>(`${url + filtersType[2]}/`);
 
-    const { selectedTechnologies, selectedCategories, selectedApplications, handleFilterChange } = useFilters();
-    const newUrl = constructFilterURL(urlSearch, selectedTechnologies, selectedCategories, selectedApplications);
+    const {
+        selectedTechnologies,
+        selectedCategories,
+        selectedApplications,
+        handleFilterChange,
+        selectedBrands
+    } = useFilters();
+    const newUrl = constructFilterURL(urlSearch, selectedTechnologies, selectedCategories, selectedApplications, selectedBrands);
 
 
     useEffect(() => {
         parentMethod(newUrl);
-    }, [selectedCategories, selectedTechnologies, selectedApplications,parentMethod,urlSearch,newUrl]);
+    }, [selectedCategories, selectedTechnologies, selectedApplications, parentMethod, urlSearch, newUrl,selectedBrands]);
 
 
     return (

@@ -14,3 +14,10 @@
         object-fit: cover;
     }
 }
+
+.true-brand{
+    background-color: #0e4a5c;
+}
+.false-brand{
+    background-color: rgba(232, 232, 232, 0.68);
+}
