@@ -3,9 +3,12 @@ import {useFetch} from "../../../hooks";
 import {Product} from "../../../types";
 import {ProductCard} from "../ProductCard/ProductCard";
 
-const url = "http://localhost:8080/api/inventory/search";
+interface Params{
+    url:string
+}
 
-export const ProductsGrid = () => {
+
+export const ProductsGrid = ({url}:Params) => {
 
     const {data, loading, error} = useFetch<Product[]>(url);
 

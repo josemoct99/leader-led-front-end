@@ -1,30 +1,18 @@
 import './Filter.css'
-import {Application, Category, Technology} from "../../types";
+import {ReactNode} from "react";
 
 interface Props {
     type: string,
-    data: Category[] | Technology[] | Application[] | null,
+    children: ReactNode,
 }
 
 
-export const Filter = ({ type, data }: Props) => {
+export const Filter = ({ type,children  }: Props) => {
     return (
         <div className="filter">
             <h3 className="filter-title">{type}</h3>
             <div className="filter-items">
-                {data?.map(item => (
-                    <div key={item.name} className="filter-item">
-                        <label htmlFor={item.name} className="filter-label">
-                            <input
-                                type="checkbox"
-                                id={item.name}
-                                name={item.name}
-                                className="filter-checkbox"
-                            />
-                            {item.name}
-                        </label>
-                    </div>
-                ))}
+                {children}
             </div>
         </div>
     );
