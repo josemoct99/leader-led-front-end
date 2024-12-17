@@ -12,6 +12,8 @@ export interface CartContextType {
     categories: string[];
     totalCategories: number;
     message: () => string;
+    setQuantity: (newQuantity: number, product: Product) => void;
+    getQuantity: (product: Product) => number;
 }
 
 export const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -30,7 +32,10 @@ export const CartProvider = ({children}: ContextProviderProps) => {
     // add item
     const addItem = (product: Product) => {
         setProducts((prevProducts) => {
-            if(prevProducts.includes(product)) { return prevProducts; }
+            if (prevProducts.includes(product)) {
+                return prevProducts;
+            }
+            product.quantity = 1;
             const updateProducts: Product[] = [...prevProducts, product];
             localStorage.setItem("cart", JSON.stringify(updateProducts)); //save in localstorage
             return updateProducts;
@@ -57,6 +62,20 @@ export const CartProvider = ({children}: ContextProviderProps) => {
         setProducts([]);
         localStorage.removeItem('cart');
     };
+    //set Quantity:
+    const setQuantity = (newQuantity: number, product: Product) => {
+        setProducts((prevProducts) => {
+            return prevProducts.map((p) =>
+                p.idInventory === product.idInventory ? {...p, quantity: newQuantity} : p
+            );
+        });
+    };
+    //get Quantity:
+    const getQuantity = (product: Product) => {
+        const foundProduct = products.find(p => p.idInventory === product.idInventory);
+        return foundProduct ? foundProduct.quantity : 1;
+    };
+
     //more of them things
     const totalProducts = products.length;
     const categories = Array.from(
@@ -93,7 +112,9 @@ export const CartProvider = ({children}: ContextProviderProps) => {
                 totalProducts,
                 categories,
                 totalCategories,
-                message
+                message,
+                setQuantity,
+                getQuantity
             }
         }>
             {children}

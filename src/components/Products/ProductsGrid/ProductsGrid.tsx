@@ -17,8 +17,6 @@ export const ProductsGrid = () => {
         return (<> loading : {loading} </>)
     }
 
-    console.log(data)
-
     return (
         <>
             <CartProvider>

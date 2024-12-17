@@ -1,7 +1,8 @@
 import './CartItem.css'
 import {QuantityComponent} from "../utils";
 import {Product} from "../../types";
-import {ReactNode} from "react";
+import {ReactNode, useState} from "react";
+import {useCart} from "../../hooks";
 
 
 interface Props {
@@ -10,16 +11,23 @@ interface Props {
 }
 
 export const CartItem = ({product,children}: Props) => {
+    const {setQuantity:setContextQuantity,getQuantity} = useCart();
+    const [quantity,setQuantity] = useState(getQuantity(product));
+
+
     const img: string =
         product.imageList?.[0]?.url + '.webp';
-
-
-
     const name: string = product.marketName;
     const description: string = product.desc;
     const urlImg = '/images/products/' + img
 
-    console.log(urlImg)
+    const changeQuantity = (quantity: number) => {
+        if (quantity < 1) {
+            return
+        }
+        setContextQuantity(quantity,product);
+        setQuantity(quantity);
+    }
 
 
     return (
@@ -32,7 +40,7 @@ export const CartItem = ({product,children}: Props) => {
                 <p >{description}</p>
             </div>
             <div className="cart-item-quantity">
-                <QuantityComponent></QuantityComponent>
+                <QuantityComponent quantity={quantity} parentMethod={changeQuantity}></QuantityComponent>
             </div>
             {children}
         </div>

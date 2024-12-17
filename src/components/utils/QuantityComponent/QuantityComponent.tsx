@@ -1,22 +1,20 @@
 import './QuantityComponent.css'
-import {useState} from "react";
 
-export const QuantityComponent = () => {
+interface Props{
+    quantity:number;
+    parentMethod: (quantity:number) => void;
+}
 
-    const [quantity, setQuantity] = useState(1);
 
-    const changeQuantity = (quantity: number) => {
-        if (quantity < 1) {
-            return
-        }
-        setQuantity(quantity);
-    }
+export const QuantityComponent = ({quantity,parentMethod}:Props) => {
+
+
 
     return (
         <div className="QuantityComponent">
-            <button className="change-button" onClick={() => changeQuantity(quantity - 1)}>-</button>
+            <button className="change-button" onClick={() => parentMethod(quantity - 1)}>-</button>
             <span> {quantity}</span>
-            <button className="change-button" onClick={() => changeQuantity(quantity + 1)}>+</button>
+            <button className="change-button" onClick={() => parentMethod(quantity + 1)}>+</button>
         </div>
     )
 }

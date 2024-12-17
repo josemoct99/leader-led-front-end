@@ -6,7 +6,7 @@ export interface Product {
     marketName: string;
     desc: string;
     imageList: Images[]
-    quantity: number;
+    quantity: number | 1;
     categorySetInventory: Category[];
     technologySetInventory: Technology[];
     colorsSetInventory: ColorProps[];
