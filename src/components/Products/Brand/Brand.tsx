@@ -1,6 +1,6 @@
 import './Brand.css'
 import {Brand as BrandType} from '../../../types/brand'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 interface Props {
     brand: BrandType,
@@ -22,12 +22,11 @@ export const Brand = ({brand, parentMethod}: Props) => {
     })
 
     const clickedHandler = () => {
-        setClicked(!clicked);
-    }
+        const newClicked = !clicked;
+        setClicked(newClicked);
+        parentMethod(name, newClicked);
 
-    useEffect(() => {
-        parentMethod(name, clicked)
-    }, [clicked, name,parentMethod])
+    };
 
     const principalImg = "images/brands/" + stringImage[0] // principal image
     return (

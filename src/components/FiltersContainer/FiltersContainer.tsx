@@ -1,25 +1,24 @@
 import './FiltersContainer.css'
 import {Filter} from "../index";
-import {useFetch,useFilters} from "../../hooks";
+import {useFetch, useFilters} from "../../hooks";
 import {Application, Category, Technology} from "../../types";
 import {FilterItems} from "../FilterItems/FilterItems";
 import {useEffect} from "react";
 import {constructFilterURL} from "../../script";
+import {useConsultInventory} from "../../hooks/useConsultInventory";
 
 const url = "http://localhost:8080/api/";
 const filtersType = ['cat', 'tech', 'app-type']
 
-interface Params {
-    parentMethod: (search: string) => void;
-    urlSearch: string;
-}
 
-
-export const FiltersContainer = ({parentMethod, urlSearch}: Params) => {
+export const FiltersContainer = () => {
 
     const {data} = useFetch<Category[]>(`${url + filtersType[0]}/`);
     const {data: dataTech,} = useFetch<Technology[]>(`${url + filtersType[1]}/`);
     const {data: dataApp,} = useFetch<Application[]>(`${url + filtersType[2]}/`);
+    //
+    const {changeUrl} = useConsultInventory();
+
 
     const {
         selectedTechnologies,
@@ -28,12 +27,12 @@ export const FiltersContainer = ({parentMethod, urlSearch}: Params) => {
         handleFilterChange,
         selectedBrands
     } = useFilters();
-    const newUrl = constructFilterURL(urlSearch, selectedTechnologies, selectedCategories, selectedApplications, selectedBrands);
+    const newUrl = constructFilterURL(selectedTechnologies, selectedCategories, selectedApplications, selectedBrands);
 
 
     useEffect(() => {
-        parentMethod(newUrl);
-    }, [selectedCategories, selectedTechnologies, selectedApplications, parentMethod, urlSearch, newUrl,selectedBrands]);
+        changeUrl(newUrl);
+    }, [newUrl, changeUrl]);
 
 
     return (

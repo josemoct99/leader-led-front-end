@@ -2,14 +2,12 @@ import "./ProductsGrid.css"
 import {useFetch} from "../../../hooks";
 import {Product} from "../../../types";
 import {ProductCard} from "../ProductCard/ProductCard";
-
-interface Params{
-    url:string
-}
+import {useConsultInventory} from "../../../hooks/useConsultInventory";
 
 
-export const ProductsGrid = ({url}:Params) => {
 
+export const ProductsGrid = () => {
+    const {url} = useConsultInventory();
     const {data, loading, error} = useFetch<Product[]>(url);
 
     if(error){

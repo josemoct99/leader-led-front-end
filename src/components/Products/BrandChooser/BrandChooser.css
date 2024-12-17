@@ -1,11 +1,19 @@
 .containerBrandChooser{
+    display: grid;
     overflow: hidden;
+    grid-template-columns: 10% 80% 10%;
     width: 60em;
+
 }
 
 .brandChooser {
     position: relative;
     display: flex;
-    width: 110em;
     gap: 1em;
+    transition: left 0.35s;
+}
+
+.aux-brandChooser{
+    overflow: hidden;
+
 }

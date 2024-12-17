@@ -1,0 +1,24 @@
+.moveDiv{
+    position: relative;
+    display: flex;
+    width: 5em;
+    height: 5em;
+    clip-path: polygon(0 10%, 100% 50%, 0 90%, 30% 50%);
+    background-color: #0c0101;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.2s ease;
+    z-index: 3;
+
+    &:hover {
+        background-color: rgba(31, 79, 119, 0.88);
+
+    }
+}
+
+.next{
+    scale: 1;
+}
+.back {
+    scale: -1;
+}

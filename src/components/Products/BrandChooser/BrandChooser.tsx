@@ -1,37 +1,35 @@
 import './BrandChooser.css'
-import {useFetch,useFilters} from "../../../hooks";
-import {Brand as BrandType} from "../../../types";
-import {Brand} from "../index";
-import {useEffect} from "react";
-import {constructFilterURL} from "../../../script";
+import {useFetch} from "../../../hooks";
+import {Brand as BrandType, Direction} from "../../../types";
+import {useEffect, useState} from "react";
+import {MoveDiv} from "../../utils/MoveDiv/MoveDiv";
+import {BrandList} from "../BrandList/BrandList";
 
 const url = "http://localhost:8080/api/brand/";
 
-interface Param {
-    parentMethod: (searchParam: string) => void;
-    urlSearch: string
-}
-
-
-export const BrandChooser = ({parentMethod, urlSearch}: Param) => {
+export const BrandChooser = () => {
     const {data, error, loading} = useFetch<Array<BrandType>>(url);
-    const {
-        handlerFilterBrands,
-        selectedTechnologies,
-        selectedCategories,
-        selectedApplications,
-        selectedBrands
-    } = useFilters();
-    const newUrl = constructFilterURL(urlSearch, selectedTechnologies, selectedCategories, selectedApplications, selectedBrands);
+    const [leftBrand, setLeftBrand] = useState<number>(0);
 
-    const searchBrand = (value: string, isPressed: boolean) => {
-        handlerFilterBrands(value, isPressed);
-    }
 
+
+    const moveBrandDiv = (dir: number) => {
+        const brandChooser = document.querySelector('.brandChooser') as HTMLElement;
+        const itemWidth = brandChooser.firstElementChild?.clientWidth || 0;
+        const move = leftBrand + (dir * itemWidth);
+        const dataLength: number = data?.length || 0;
+
+        if (move > 0 || move < -(dataLength * itemWidth))
+            return;
+
+        setLeftBrand(leftBrand + (dir * itemWidth));
+    };
+    // movement
     useEffect(() => {
-        parentMethod(newUrl);
+        const brandChooser = document.querySelector('.brandChooser') as HTMLElement;
+        brandChooser.style.left = `${leftBrand}px`;
 
-    }, [selectedCategories, selectedTechnologies, selectedApplications, parentMethod, urlSearch, newUrl, selectedBrands]);
+    }, [leftBrand]);
 
 
     if (loading) {
@@ -43,11 +41,11 @@ export const BrandChooser = ({parentMethod, urlSearch}: Param) => {
     return (
         <>
             <div className="containerBrandChooser">
-                <div className="brandChooser">
-                    {data?.map((item) => (
-                        <Brand key={item.name} brand={item} parentMethod={searchBrand}/>
-                    ))}
+                <MoveDiv parentMethod={moveBrandDiv} dir={Direction.BACK}/>
+                <div className="aux-brandChooser">
+                    <BrandList data={data}/>
                 </div>
+                <MoveDiv parentMethod={moveBrandDiv} dir={Direction.NEXT}/>
             </div>
 
         </>
