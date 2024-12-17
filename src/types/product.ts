@@ -11,5 +11,4 @@ export interface Product {
     technologySetInventory: Technology[];
     colorsSetInventory: ColorProps[];
     applicationTypeSetInventory: Application[];
-
 }

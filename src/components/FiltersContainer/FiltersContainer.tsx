@@ -36,7 +36,7 @@ export const FiltersContainer = () => {
 
 
     return (
-        <div>
+        <div className="filters-container">
             <Filter type="Categoría">
                 {data?.map(item => (
                     <FilterItems key={item.name}

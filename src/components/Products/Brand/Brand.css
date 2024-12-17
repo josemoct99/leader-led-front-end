@@ -1,7 +1,7 @@
 .brand {
     position: relative;
     display: flex;
-    min-width: 8em;
+    min-width: 6em;
     height: 6em;
     border-radius: 50%;
     cursor: pointer;

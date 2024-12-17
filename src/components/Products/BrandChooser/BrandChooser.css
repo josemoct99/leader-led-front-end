@@ -1,8 +1,9 @@
 .containerBrandChooser{
     display: grid;
     overflow: hidden;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 15% 70% 15%;
     width: 60em;
+    max-width: 100%;
 
 }
 

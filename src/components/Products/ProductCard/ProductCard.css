@@ -6,6 +6,7 @@
     aspect-ratio: 2/3;
     background-color: #ffffff;
     box-shadow: 10px 10px 30px rgba(2, 2, 2, 0.3);
+    cursor: pointer;
 }
 
 #imageProductContainer {

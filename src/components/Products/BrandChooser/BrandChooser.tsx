@@ -11,8 +11,6 @@ export const BrandChooser = () => {
     const {data, error, loading} = useFetch<Array<BrandType>>(url);
     const [leftBrand, setLeftBrand] = useState<number>(0);
 
-
-
     const moveBrandDiv = (dir: number) => {
         const brandChooser = document.querySelector('.brandChooser') as HTMLElement;
         const itemWidth = brandChooser.firstElementChild?.clientWidth || 0;

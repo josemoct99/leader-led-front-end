@@ -17,7 +17,6 @@ export const MoveDiv = ({parentMethod,dir}:Props) => {
         direction = 1;
     }
 
-
     return (
         <button className={`moveDiv ${dir}`} onClick={()=>parentMethod(direction)}>
             .
