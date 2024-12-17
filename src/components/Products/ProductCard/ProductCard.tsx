@@ -4,6 +4,8 @@ import {useState} from "react";
 import {BackDrop} from "../../BackDrop/BackDrop";
 import {Modal} from "../../Modal/Modal";
 import {ContentModalProduct} from "../../ContentModalProduct/ContentModalProduct";
+import {useCart} from "../../../hooks";
+import {ContentProductCard} from "../ContentProductCard/ContentProductCard";
 
 interface Props {
     product: Product;
@@ -12,6 +14,7 @@ interface Props {
 
 export const ProductCard = ({product}: Props) => {
     const [modal, setModal] = useState(false);
+    const {addItem} = useCart();
 
     const handlerClick = () => {
         setModal(true);
@@ -20,9 +23,8 @@ export const ProductCard = ({product}: Props) => {
         setModal(false);
     }
 
-
     return (
-        <>
+        <div className="ProductCard">
             {modal &&
                 <><BackDrop onClick={closeModal}/>
                     <Modal>
@@ -30,32 +32,10 @@ export const ProductCard = ({product}: Props) => {
                     </Modal>
                 </>
             }
-            <section className="cardProduct" onClick={handlerClick}>
-                <section id="imageProductContainer">
-                    <img
-                        src={`/images/products/${product.imageList[0]?.url}.webp`}
-                        alt="Imagen del producto"
-                    />
-                </section>
-                <section id="nameDescContainer">
-                    <div id="nameProduct">{product.marketName}</div>
-                    <div id="descProduct" style={{color: "#d7d7d7", textAlign: "center"}}>
-                        {product.desc}
-                    </div>
-                </section>
-                <section id="utilsContainer">
-                    <div className="desc-properties" id="techTypeProduct">
-                        {product.technologySetInventory[0]?.name}
-                    </div>
-                    <div className="desc-properties" id="appTypeProduct">
-                        {product.applicationTypeSetInventory[0]?.name}
-                    </div>
-                    <div className="desc-properties" id="catTypeProduct">
-                        {product.categorySetInventory[0]?.name}
-                    </div>
-                </section>
-            </section>
-        </>
+            <button className="add-product-cart-button" onClick={() => addItem(product)}> Añadir</button>
+            <ContentProductCard product={product} parentMethod={handlerClick}/>
+
+        </div>
     );
 }
 

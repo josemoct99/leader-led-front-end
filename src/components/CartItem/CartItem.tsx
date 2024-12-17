@@ -9,16 +9,19 @@ interface Props {
     children: ReactNode;
 }
 
-export const CartItem = ({product}: Props) => {
+export const CartItem = ({product,children}: Props) => {
     const img: string =
-        product.imageList?.[0]?.url && product.imageList?.[0]?.typeSet?.[0]?.type
-            ? product.imageList[0].url + product.imageList[0].typeSet[0].type
-            : '.'; // didn't like it
+        product.imageList?.[0]?.url + '.webp';
+
+
 
     const name: string = product.marketName;
     const description: string = product.desc;
-
     const urlImg = '/images/products/' + img
+
+    console.log(urlImg)
+
+
     return (
         <div className="CartItem">
             <div className="head-cart-item">
@@ -31,6 +34,7 @@ export const CartItem = ({product}: Props) => {
             <div className="cart-item-quantity">
                 <QuantityComponent></QuantityComponent>
             </div>
+            {children}
         </div>
     )
 }

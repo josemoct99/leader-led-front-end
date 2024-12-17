@@ -1,10 +1,26 @@
 .CartList{
     display: flex;
     flex-direction: column;
-    background-color: #d9d9d9;
+    background-color: #fefefe;
     padding: 10px;
     width:90%;
     gap: 1rem;
     max-height: 35em;
     overflow-y: scroll;
+    border: 1px solid #ddd;
+}
+.close-item-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2em;
+    height: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+.close-item-button:hover {
+    color: #ff3b3b;
+    transform: scale(1.2);
 }

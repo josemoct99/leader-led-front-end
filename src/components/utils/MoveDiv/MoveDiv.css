@@ -10,7 +10,7 @@
     cursor: pointer;
     margin-left: 5px;
     transition: background-color 0.2s ease;
-    z-index: 3;
+    z-index: 0;
 
     &:hover {
         background-color: rgba(31, 79, 119, 0.88);

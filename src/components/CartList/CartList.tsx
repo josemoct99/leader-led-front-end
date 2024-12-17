@@ -12,7 +12,7 @@ export const CartList = () => {
         <div className="CartList">
             {products?.map((product: Product) => {
                 return <CartItem key={product.idInventory} product={product}>
-                    <button onClick={() => removeItem(product)}></button>
+                    <button className="close-item-button" onClick={() => removeItem(product)}> X </button>
                 </CartItem>
             })
             }
