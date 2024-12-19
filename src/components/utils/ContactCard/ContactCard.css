@@ -1,0 +1,85 @@
+/* General container styles */
+.contact-card {
+    width: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff; /* Neutral white background */
+    color: #333333;
+    margin: 20px auto;
+    border: 1px solid #dcdcdc; /* Subtle gray border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for structure */
+    font-family: 'Arial', sans-serif; /* Clean, professional font */
+}
+
+/* Header styles */
+.card-contact-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #004c80; /* Deep business blue */
+    color: #ffffff; /* White text for contrast */
+}
+
+.card-contact-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700; /* Bold for prominence */
+}
+
+.card-tagline {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    color: #d1e4f1; /* Soft blue for tagline */
+}
+
+/* Content styles */
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555;
+}
+
+.card-content strong {
+    color: #004c80;
+}
+
+.card-content a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+    color: #003366;
+}
+
+.card-contact-footer {
+    text-align: center;
+    padding: 15px;
+    background: #f7f7f7;
+    border-top: 1px solid #e6e6e6;
+
+}
+
+.contact-button {
+    padding: 10px 25px;
+    border: 1px solid #004c80;
+    border-radius: 5px;
+    background-color: #004c80;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #003366; /* Slightly darker blue on hover */
+    border-color: #003366;
+}

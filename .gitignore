@@ -24,4 +24,8 @@ yarn-error.log*
 
 *storybook.log
 
+<<<<<<< HEAD
 .idea
+=======
+.idea
+>>>>>>> origin/main

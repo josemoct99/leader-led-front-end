@@ -1,12 +1,34 @@
 import './BrandChooser.css'
 import {useFetch} from "../../../hooks";
-import {Brand as BrandType} from "../../../types";
-import {Brand} from "../index";
+import {Brand as BrandType, Direction} from "../../../types";
+import {useEffect, useState} from "react";
+import {MoveDiv} from "../../utils/MoveDiv/MoveDiv";
+import {BrandList} from "../BrandList/BrandList";
 
 const url = "http://localhost:8080/api/brand/";
 
 export const BrandChooser = () => {
     const {data, error, loading} = useFetch<Array<BrandType>>(url);
+    const [leftBrand, setLeftBrand] = useState<number>(0);
+
+    const moveBrandDiv = (dir: number) => {
+        const brandChooser = document.querySelector('.brandChooser') as HTMLElement;
+        const itemWidth = brandChooser.firstElementChild?.clientWidth || 0;
+        const move = leftBrand + (dir * itemWidth);
+        const dataLength: number = data?.length || 0;
+
+        if (move > 0 || move < -(dataLength * itemWidth))
+            return;
+
+        setLeftBrand(leftBrand + (dir * itemWidth));
+    };
+    // movement
+    useEffect(() => {
+        const brandChooser = document.querySelector('.brandChooser') as HTMLElement;
+        brandChooser.style.left = `${leftBrand}px`;
+
+    }, [leftBrand]);
+
 
     if (loading) {
         return <div>Loading...</div>;
@@ -17,11 +39,11 @@ export const BrandChooser = () => {
     return (
         <>
             <div className="containerBrandChooser">
-                <div className="brandChooser">
-                    {data?.map((item) => (
-                        <Brand key={item.name} name={item.name} images={item.images} idBrand={item.idBrand}/>
-                    ))}
+                <MoveDiv parentMethod={moveBrandDiv} dir={Direction.BACK}/>
+                <div className="aux-brandChooser">
+                    <BrandList data={data}/>
                 </div>
+                <MoveDiv parentMethod={moveBrandDiv} dir={Direction.NEXT}/>
             </div>
 
         </>

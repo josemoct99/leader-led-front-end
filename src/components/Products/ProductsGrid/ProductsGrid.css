@@ -1,0 +1,15 @@
+.products-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+    width: 80em;
+    max-width: 100%;
+    background-color: rgba(14, 74, 92, 0);
+    height: auto;
+    max-height: 80em;
+    overflow: scroll;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    padding: 1em 0;
+}

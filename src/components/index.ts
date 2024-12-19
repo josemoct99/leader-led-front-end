@@ -1,7 +1,7 @@
 export * from './Home/Content/Content';
 export * from './Hero/Hero';
 export * from './Navbar/Navbar';
-//export * from './Products/ProductGrid'
+//export * from './Products/ProductsGrid'
 //export * from './Products/ProductItem'
 export * from './Home/CategoryCard/CategoryCard'
 export * from './Home/ContainerCategoriesCards/ContainerCategoriesCards'
@@ -10,3 +10,8 @@ export * from './Map/Map'
 export * from './TitleDecorate/TitleDecorate'
 export * from './ServiceCards/FlexCards/GridCards'
 export * from './ServiceCards/Card/ServiceCard'
+export * from './utils/ContactCard/ContactCard'
+export * from './CartSummary/CartSummary'
+export * from './CartList/CartList'
+export * from './Filter/Filter'
+export * from './FiltersContainer/FiltersContainer'

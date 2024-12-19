@@ -1,0 +1,52 @@
+.summary-section {
+    width: 20em;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Estilo para el título del resumen */
+.dl-summary dt {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.dl-summary hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.summary-info-section {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+#communicate {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: block; /* Botón como bloque para centrarlo */
+    margin: 20px auto 0; /* Espaciado superior y centrado */
+    padding: 10px 20px;
+    background-color: #1f4f77; /* Azul claro */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgba(31, 79, 119, 0.83); /* Azul más oscuro al pasar el cursor */
+    }
+}

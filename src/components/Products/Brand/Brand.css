@@ -1,7 +1,7 @@
 .brand {
     position: relative;
     display: flex;
-    width: 10em;
+    min-width: 6em;
     height: 6em;
     border-radius: 50%;
     cursor: pointer;
@@ -13,4 +13,11 @@
         max-height: 85%;
         object-fit: cover;
     }
+}
+
+.true-brand{
+    background-color: #0e4a5c;
+}
+.false-brand{
+    background-color: rgba(232, 232, 232, 0.68);
 }
