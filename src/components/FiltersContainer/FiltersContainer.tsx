@@ -6,9 +6,10 @@ import {FilterItems} from "../FilterItems/FilterItems";
 import {useEffect} from "react";
 import {constructFilterURL} from "../../script";
 import {useConsultInventory} from "../../hooks/useConsultInventory";
+import {BASE_API_URL,FILTER_TYPES} from "../../utils/api";
 
-const url = "http://localhost:8080/api/";
-const filtersType = ['cat', 'tech', 'app-type']
+const url = BASE_API_URL;
+const filtersType = FILTER_TYPES;
 
 
 export const FiltersContainer = () => {
