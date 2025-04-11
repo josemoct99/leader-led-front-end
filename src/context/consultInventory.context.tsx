@@ -23,6 +23,7 @@ export const ConsultInventoryProvider = ({children}: ConsultParams) => {
     const changeUrl = (searchParams: string) => {
         if (url !== searchParams) {
             console.log(searchParams);
+            console.log("BaseUrl:",baseUrl)
             setUrl(searchParams);
         }
     }
