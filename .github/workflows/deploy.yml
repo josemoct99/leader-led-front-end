@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_BASE_API_URL: ${{ secrets.REACT_APP_BASE_API_URL}}
 
     steps:
     # Paso 1: Clonar el repositorio
