@@ -1,4 +1,4 @@
-import {Brand, Images,Technology,ColorProps,Application,Category} from "./index";
+import {Brand, Images,Technology,ColorProps,Installation,Category} from "./index";
 
 export interface Product {
     idInventory: number;
@@ -10,5 +10,5 @@ export interface Product {
     categorySetInventory: Category[];
     technologySetInventory: Technology[];
     colorsSetInventory: ColorProps[];
-    applicationTypeSetInventory: Application[];
+    installationTypeSetInventory: Installation[];
 }

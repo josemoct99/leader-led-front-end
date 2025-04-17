@@ -1,7 +1,7 @@
 import './FiltersContainer.css'
 import {Filter} from "../index";
 import {useFetch, useFilters} from "../../hooks";
-import {Application, Category, Technology} from "../../types";
+import {Installation, Category, Technology} from "../../types";
 import {FilterItems} from "../FilterItems/FilterItems";
 import {useEffect} from "react";
 import {constructFilterURL} from "../../script";
@@ -14,9 +14,9 @@ const filtersType = FILTER_TYPES;
 
 export const FiltersContainer = () => {
 
-    const {data} = useFetch<Category[]>(`${url + filtersType[0]}/`);
-    const {data: dataTech,} = useFetch<Technology[]>(`${url + filtersType[1]}/`);
-    const {data: dataApp,} = useFetch<Application[]>(`${url + filtersType[2]}/`);
+    const {data} = useFetch<Category[]>(`${url + filtersType[0]}`);
+    const {data: dataTech,} = useFetch<Technology[]>(`${url + filtersType[1]}`);
+    const {data: dataApp,} = useFetch<Installation[]>(`${url + filtersType[2]}`);
     //
     const {changeUrl} = useConsultInventory();
 
