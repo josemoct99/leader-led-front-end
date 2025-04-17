@@ -1,41 +1,62 @@
 import "./ProductCard.css"
-import {Product} from "../../../types";
-import {useState} from "react";
+import {Product, ProductCardJson} from "../../../types";
+import {useEffect, useState} from "react";
 import {BackDrop} from "../../BackDrop/BackDrop";
 import {Modal} from "../../Modal/Modal";
 import {ContentModalProduct} from "../../ContentModalProduct/ContentModalProduct";
-import {useCart} from "../../../hooks";
+import {useCart, useFetch} from "../../../hooks";
 import {ContentProductCard} from "../ContentProductCard/ContentProductCard";
+import {INVENTORY_URL} from "../../../utils/api";
 
 interface Props {
-    product: Product;
+    productCard: ProductCardJson;
 }
 
+const url = INVENTORY_URL;
 
-export const ProductCard = ({product}: Props) => {
+export const ProductCard = ({ productCard }: Props) => {
     const [modal, setModal] = useState(false);
-    const {addItem} = useCart();
+    const [fetchTriggered, setFetchTriggered] = useState(false);
+    const { addItem } = useCart();
+
+    // Usamos useFetch solo cuando se activa el trigger
+    const { data: product } = useFetch<Product>(fetchTriggered ? url + `/${productCard.idInventory}` : "");
+
 
     const handlerClick = () => {
         setModal(true);
-    }
+    };
+
     const closeModal = () => {
         setModal(false);
-    }
+    };
+
+    const handleAddToCart = () => {
+        setFetchTriggered(true); // Activa el trigger para hacer la llamada
+    };
+
+    useEffect(() => {
+        if (product) {
+            addItem(product);
+        }
+    }, [product, addItem]); // Ejecuta esto solo cuando el producto se haya recibido
 
     return (
         <div className="ProductCard">
-            {modal &&
-                <><BackDrop onClick={closeModal}/>
+            {modal && (
+                <>
+                    <BackDrop onClick={closeModal} />
                     <Modal>
-                        <ContentModalProduct product={product}/>
+                        <ContentModalProduct productId={productCard.idInventory} />
                     </Modal>
                 </>
-            }
-            <button className="add-product-cart-button" onClick={() => addItem(product)}> Añadir</button>
-            <ContentProductCard product={product} parentMethod={handlerClick}/>
-
+            )}
+            <button className="add-product-cart-button" onClick={handleAddToCart}>
+                Añadir
+            </button>
+            <ContentProductCard productCardJson={productCard} parentMethod={handlerClick} />
         </div>
     );
-}
+};
+
 

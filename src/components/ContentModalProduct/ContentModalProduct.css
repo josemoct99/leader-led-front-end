@@ -3,8 +3,16 @@
     flex-direction: column;
     gap: 1.5rem;
     padding: 2rem;
+    width: 100%;
     max-width: 600px;
     margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.modalHeader {
+    margin-bottom: 0.5rem;
 }
 
 .modalHeader h2 {
@@ -16,6 +24,13 @@
 .productDesc {
     font-size: 1rem;
     color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.productReference {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
 }
 
 .productImages {
@@ -36,6 +51,8 @@
 .imageGallery {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .thumbnailImage {
@@ -54,7 +71,10 @@
 .productDetails {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 .detailRow {
@@ -63,11 +83,18 @@
     align-items: center;
     font-size: 1rem;
     color: #333;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.detailRow:last-child {
+    border-bottom: none;
 }
 
 .detailRow strong {
     font-weight: bold;
     color: #555;
+    min-width: 120px;
 }
 
 .colorsRow {
@@ -80,30 +107,50 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 0.5rem;
+    width: 100%;
 }
 
 .colorItem {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #f9f9f9;
-    padding: 0.5rem;
+    background-color: #fff;
+    padding: 0.75rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+    flex-grow: 1;
+    min-width: 150px;
 }
 
 .colorDetails {
     display: flex;
     flex-direction: column;
+    gap: 0.25rem;
+}
+
+.colorName {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
 }
 
 .colorTemperature {
     font-size: 0.9rem;
-    font-weight: bold;
     color: #0077cc;
 }
 
 .colorDescription {
     font-size: 0.85rem;
     color: #555;
+}
+
+.loadingState, .errorState {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.errorState {
+    color: #e74c3c;
 }

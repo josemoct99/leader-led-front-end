@@ -1,15 +1,14 @@
 import './ContentProductCard.css'
-import {Product} from "../../../types";
+import {ProductCardJson} from "../../../types";
 
 
 interface Props {
-    product?: Product;
+    productCardJson?: ProductCardJson;
     parentMethod?: () => void;
 }
 
-export const ContentProductCard = ({product, parentMethod}: Props) => {
-    // Si product es undefined o null, no se renderiza nada
-    if (!product) return null;
+export const ContentProductCard = ({productCardJson, parentMethod}: Props) => {
+    if (!productCardJson) return null;
     const handleClick = () => {
         if (parentMethod) {
             parentMethod();
@@ -20,25 +19,25 @@ export const ContentProductCard = ({product, parentMethod}: Props) => {
         <section className="cardProduct" onClick={handleClick}>
             <section id="imageProductContainer">
                 <img
-                    src={`/images/products/${product.imageList?.[0]?.url ?? 'default'}.webp`}
+                    src={`/images/products/${productCardJson.mainImageUrl ?? 'default'}.webp`}
                     alt="Imagen del producto"
                 />
             </section>
             <section id="nameDescContainer">
-                <div id="nameProduct">{product.marketName ?? 'Sin nombre'}</div>
+                <div id="nameProduct">{productCardJson.marketName ?? 'Sin nombre'}</div>
                 <div id="descProduct" style={{color: "#d7d7d7", textAlign: "center"}}>
-                    {product.desc ?? 'Sin descripción'}
+                    {productCardJson.desc ?? 'Sin descripción'}
                 </div>
             </section>
             <section id="utilsContainer">
                 <div className="desc-properties" id="techTypeProduct">
-                    {product.technologySetInventory?.[0]?.name ?? 'N/A'}
+                    {productCardJson.primaryTechnology ?? 'N/A'}
                 </div>
                 <div className="desc-properties" id="appTypeProduct">
-                    {product.installationTypeSetInventory?.[0]?.name ?? 'N/A'}
+                    {productCardJson.primaryInstallation ?? 'N/A'}
                 </div>
                 <div className="desc-properties" id="catTypeProduct">
-                    {product.categorySetInventory?.[0]?.name ?? 'N/A'}
+                    {productCardJson.primaryCategory?? 'N/A'}
                 </div>
             </section>
         </section>
