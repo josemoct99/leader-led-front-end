@@ -4,9 +4,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
+    display: flex;
     width: 50%;
     height: 80%;
     z-index: 11;
     overflow: scroll;
     min-width: 22em;
+    align-items: center;
+    justify-content: center;
 }

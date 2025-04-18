@@ -1,4 +1,6 @@
-let baseUrl = "http://localhost:8080/api/inventory/search"; // This is default url
+import {INVENTORY_SEARCH_URL} from "../utils/api";
+
+let baseUrl = INVENTORY_SEARCH_URL;
 
 export const constructFilterURL = (
     technologies: string[],

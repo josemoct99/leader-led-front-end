@@ -81,7 +81,7 @@ export const CartProvider = ({children}: ContextProviderProps) => {
     const categories = Array.from(
         new Set(
             products.flatMap(product =>
-                product.categorySetInventory?.map(cat => cat.name) || []
+                product.categoriesSetInventory?.map(cat => cat.name) || []
             )
         )
     );

@@ -1,9 +1,9 @@
 import "./FilterItems.css"
-import {Application, Category, Technology} from "../../types";
+import {Installation, Category, Technology} from "../../types";
 import {ChangeEvent} from "react";
 
 
-type ItemType = Category | Technology | Application;
+type ItemType = Category | Technology | Installation;
 
 interface Props{
     item : ItemType;

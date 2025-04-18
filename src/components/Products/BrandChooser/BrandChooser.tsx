@@ -4,8 +4,9 @@ import {Brand as BrandType, Direction} from "../../../types";
 import {useEffect, useState} from "react";
 import {MoveDiv} from "../../utils/MoveDiv/MoveDiv";
 import {BrandList} from "../BrandList/BrandList";
+import {BRAND_URL} from "../../../utils/api";
 
-const url = "http://localhost:8080/api/brand/";
+const url = BRAND_URL;
 
 export const BrandChooser = () => {
     const {data, error, loading} = useFetch<Array<BrandType>>(url);

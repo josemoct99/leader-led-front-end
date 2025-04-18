@@ -1,7 +1,7 @@
 import {createContext, ReactNode, useState} from "react";
+import { INVENTORY_SEARCH_URL } from "../utils/api";
 
-const baseUrl = "http://localhost:8080/api/inventory/search"; // This is default url
-
+const baseUrl = INVENTORY_SEARCH_URL;
 
 export interface ConsultInventoryType {
     url: string;
@@ -23,6 +23,7 @@ export const ConsultInventoryProvider = ({children}: ConsultParams) => {
     const changeUrl = (searchParams: string) => {
         if (url !== searchParams) {
             console.log(searchParams);
+            console.log("BaseUrl:",baseUrl)
             setUrl(searchParams);
         }
     }
