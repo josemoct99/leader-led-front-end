@@ -17,7 +17,10 @@ export default [
           jsx: true,
         },
       },
-      globals: globals.browser,
+       globals: {
+        ...globals.browser,
+        ...globals.node  // Agregar los globals de Node aquí
+      },
     },
     rules: {},
   },
